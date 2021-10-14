@@ -10,14 +10,14 @@ class App extends Component {
 
 
   render () {
-
-    console.log(getInfoUser(12));
     return (
       <div className="App">
         <Router>
+          <Header/>
+          <main>
+          <VerticalHeader/>
           <Route exact path="/" component={Dashboard} />
-          <Header />
-          <VerticalHeader />
+          </main>
         </Router>
       </div>
     );
