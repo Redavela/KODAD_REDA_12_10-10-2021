@@ -21,10 +21,10 @@ You need Node (v14.15.5) to run the npm commands
 
 Install and run the project
 Clone the project to your computer
-git clone https://github.com/maevanapcontact/maevanguyenanhphuong_12_27012021.git
+git clone https://github.com/Redavela/KODAD_REDA_12_10-10-2021.git
 
 Go to the project folder
-cd maevanguyenanhphuong_12_27012021
+cd KODAD_REDA_12_10-10-2021
 
 Install the packages
 npm i
