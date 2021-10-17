@@ -28,6 +28,7 @@ const fetchInfo = (id, route = undefined) => {
   const url = route ? `${BASE_URL}/${id}/${route}` : `${BASE_URL}/${id}`;
 
   return fetch (url)
-    .then (response => response.json ())
-    .then (response => response.data);
+    .then (response => response.json())
+    .then (response => response.data)
+    .catch(error => console.error('erreur des données'));
 };
