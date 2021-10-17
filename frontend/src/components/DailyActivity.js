@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {
-  Text,
   BarChart,
   Bar,
   XAxis,
@@ -9,9 +8,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  AreaChart,
-  ReferenceLine,
-  Area,
 } from 'recharts';
 import {getInfoActivity} from '../provider/UserProvider';
 
