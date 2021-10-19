@@ -24,6 +24,10 @@ export const getInfoKeyData = id => {
   return fetchInfo (id, 'key-data');
 };
 
+
+export const getUserPerformance = id => {
+  return fetchInfo (id, 'performance');
+};
 const fetchInfo = (id, route = undefined) => {
   const url = route ? `${BASE_URL}/${id}/${route}` : `${BASE_URL}/${id}`;
 

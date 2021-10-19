@@ -42,55 +42,60 @@ const DailyActivity = () => {
     return null
   };
 
-  return (
-    <div className="container">
-      <h2>Activité quotidienne</h2>
-      <ResponsiveContainer width={835} height={320}>
-
-        <BarChart
-          width={730}
-          height={250}
-          data={userActivity}
-          margin={{
-            right: 10,
-            left: 40,
-            bottom: 5,
-          }}
-          barCategoryGap={35}
-          barGap={8}
-        >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
-          <XAxis dataKey="day" tickLine={false} tick={{fontSize: 14}} dy={15} />
-          <YAxis
-            orientation="right"
-            tickCount={3}
-            axisLine={false}
-            tickLine={false}
-          />
-          <Tooltip content={renderTooltip} />
-          <Legend
-            formatter={renderColorLegend}
-            verticalAlign="top"
-            height={36}
-            align="right"
-            iconType="circle"
-          />
-          <Bar
-            name="Poids (kg)"
-            dataKey="kilogram"
-            fill="#000"
-            radius={[50, 50, 0, 0]}
-          />
-          <Bar
-            name="Calories brûlées (kCal)"
-            dataKey="calories"
-            fill="#e60000"
-            radius={[50, 50, 0, 0]}
-          />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-  );
+  if (userActivity) {
+    return (
+      <div className="container">
+        <h2>Activité quotidienne</h2>
+        <ResponsiveContainer width={835} height={320}>
+  
+          <BarChart
+            width={730}
+            height={250}
+            data={userActivity}
+            margin={{
+              right: 10,
+              left: 40,
+              bottom: 5,
+            }}
+            barCategoryGap={35}
+            barGap={8}
+          >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis dataKey="day" tickLine={false} tick={{fontSize: 14}} dy={15} />
+            <YAxis
+              orientation="right"
+              tickCount={3}
+              axisLine={false}
+              tickLine={false}
+            />
+            <Tooltip content={renderTooltip} />
+            <Legend
+              formatter={renderColorLegend}
+              verticalAlign="top"
+              height={36}
+              align="right"
+              iconType="circle"
+            />
+            <Bar
+              name="Poids (kg)"
+              dataKey="kilogram"
+              fill="#000"
+              radius={[50, 50, 0, 0]}
+            />
+            <Bar
+              name="Calories brûlées (kCal)"
+              dataKey="calories"
+              fill="#e60000"
+              radius={[50, 50, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    );
+  } else {
+    return <div>Loading...</div>
+  }
+ 
 };
 
 export default DailyActivity;
