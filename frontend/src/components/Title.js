@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getInfoUser } from '../provider/UserProvider';
+import '../styles/dashboard.css'
+
 
 class Title extends Component {
 
@@ -18,7 +20,7 @@ class Title extends Component {
 
     render() {
         return (
-            <div>
+            <div className='title'>
                 {
                 this.state.userInfo ? <h1>BONJOUR {this.state.userInfo.firstName}</h1> : ''
                 }    

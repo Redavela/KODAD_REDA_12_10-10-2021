@@ -25,11 +25,11 @@ const DailyActivity = () => {
       setUserActivity(formatUserActivity);
     });
   }, []);
-  console.log (userActivity);
+  // console.log (userActivity);
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );
-
+ 
   const renderTooltip = values => {
     if (values.active) {
       return (

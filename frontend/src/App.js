@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, } from 'react-router-dom';
 import Header from './components/Header';
 import VerticalHeader from './components/VerticalHeader';
 import Dashboard from './pages/Dashboard';
-import { getInfoUser } from './provider/UserProvider';
 import './styles/App.css';
 
 class App extends Component {

@@ -1,0 +1,28 @@
+.user-activities{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.layout-data{
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+}
+.layout-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-row{
+    width: 835px;
+    height: 320px;
+    align-items: center;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+.title{
+    width: 100%;
+    padding: 50px 150px;
+}
+.four-data{
+    width:20%;
+}

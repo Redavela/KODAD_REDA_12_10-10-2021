@@ -4,7 +4,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
 } from 'recharts';
 import {getUserPerformance} from '../provider/UserProvider';
 
@@ -25,21 +24,19 @@ const CapacityRadar = () => {
 
 
   if (!userPerformance) return <div>Loading</div>
-  console.log(userPerformance)
+  // console.log(userPerformance)
   return (
     <div
       style={{
         backgroundColor: '#282D30',
-        width: 280,
+        width: 258,
         height: 263,
-        borderRadius: 5,
-        overflow: 'hidden',
-        padding: 16,
+        borderRadius: 5
       }}
     >
       <RadarChart
-        outerRadius={80}
-        width={285}
+        outerRadius={58}
+        width={258}
         height={263}
         data={userPerformance}
       >
