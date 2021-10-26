@@ -46,10 +46,10 @@ const DailyActivity = () => {
     return (
       <div className="container">
         <h2>Activité quotidienne</h2>
-        <ResponsiveContainer width={835} height={320}>
+        <ResponsiveContainer width={750} height={320}>
   
           <BarChart
-            width={730}
+            width={680}
             height={250}
             data={userActivity}
             margin={{
@@ -57,7 +57,7 @@ const DailyActivity = () => {
               left: 40,
               bottom: 5,
             }}
-            barCategoryGap={35}
+            barCategoryGap={29}
             barGap={8}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />

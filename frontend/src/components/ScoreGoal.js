@@ -24,8 +24,8 @@ const ScoreGoal = () => {
     <div
       style={{
         backgroundColor: '#FBFBFB',
-        width: 258,
-        height: 263,
+        width: 235,
+        height: 253,
         borderRadius: 5,
       }}
     >

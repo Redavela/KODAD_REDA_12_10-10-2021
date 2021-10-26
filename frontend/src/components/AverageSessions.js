@@ -44,14 +44,14 @@ const AverageSessions = () => {
     <div
       style={{
         backgroundColor: '#FF0000',
-        width: 258,
-        height: 263,
+        width: 240,
+        height: 253,
         borderRadius: 5
       }}
     >
       <h2 style={{color: '#FFFFFF', opacity:0.5}}>Durée moyenne des sessions</h2>
       <ResponsiveContainer>
-        <LineChart width={730} height={250} data={userInfoSessions}
+        <LineChart width={730} height={180} data={userInfoSessions}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <XAxis
             dataKey="day"

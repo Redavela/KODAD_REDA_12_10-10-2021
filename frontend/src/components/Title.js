@@ -22,8 +22,9 @@ class Title extends Component {
         return (
             <div className='title'>
                 {
-                this.state.userInfo ? <h1>BONJOUR {this.state.userInfo.firstName}</h1> : ''
-                }    
+                this.state.userInfo ? <h1>Bonjour <span>{this.state.userInfo.firstName}</span></h1> : ''
+                }  
+                <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>  
             </div>
         );
     }

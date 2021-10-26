@@ -1,9 +1,9 @@
 .App {
     margin: 0 auto;
-    max-width: 1440px;
-    max-height: 1024px;
-    min-width: 1024px;
-    min-height: 780px;
+    width: 1020px;
+    height: 760px;
+    min-width: 1000px;
+    min-height: 760px;
     display: flex;
     flex-direction: column;
 }
@@ -47,9 +47,9 @@ main {
 }
 
 .left-nav {
-    height: 100%;
+    height: 780px;
     background: #000;
-    padding: 150px 10px 10px 5px;
+    padding: 100px 0px 0px 5px;
 }
 
 .left-nav .icon-left {
@@ -75,10 +75,10 @@ main {
  .container {
     position: relative;
     background: #fbfbfb;
-    width: 835px;
+    width: 635px;
     height: 320px;
     border-radius: 5px;
-    padding: 24px 0 0 20px;
+    padding: 10px 0 0 5px;
     margin-bottom: 28px;
 }
 

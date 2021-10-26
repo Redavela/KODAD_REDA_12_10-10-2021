@@ -29,15 +29,15 @@ const CapacityRadar = () => {
     <div
       style={{
         backgroundColor: '#282D30',
-        width: 258,
-        height: 263,
+        width: 235,
+        height: 253,
         borderRadius: 5
       }}
     >
       <RadarChart
-        outerRadius={58}
-        width={258}
-        height={263}
+        outerRadius={48}
+        width={235}
+        height={260}
         data={userPerformance}
       >
         <PolarGrid radialLines={false} />
