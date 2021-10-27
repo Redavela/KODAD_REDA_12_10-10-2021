@@ -1,33 +1,18 @@
-import React, { Component } from 'react';
-import { getInfoUser } from '../provider/UserProvider';
-import '../styles/dashboard.css'
+import React from 'react';
+import '../styles/dashboard.css';
+import PropTypes from 'prop-types';
+
+const Title = ({name}) => {
+  return (
+    <div className="title">
+      {name ? <h1>Bonjour <span>{name}</span></h1> : ''}
+      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+    </div>
+  );
+};
 
 
-class Title extends Component {
-
-
-    state = {
-        userInfo: undefined
-    }
-
-    componentDidMount(){
-        getInfoUser(12)
-        .then(data => this.setState({
-            userInfo: data.userInfos
-        }))
-    }
-    
-
-    render() {
-        return (
-            <div className='title'>
-                {
-                this.state.userInfo ? <h1>Bonjour <span>{this.state.userInfo.firstName}</span></h1> : ''
-                }  
-                <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>  
-            </div>
-        );
-    }
-}
-
+Title.propTypes = {
+    name: PropTypes.string
+  };
 export default Title;

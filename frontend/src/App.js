@@ -15,7 +15,7 @@ class App extends Component {
           <Header/>
           <main>
           <VerticalHeader/>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/:id" component={Dashboard} />
           </main>
         </Router>
       </div>

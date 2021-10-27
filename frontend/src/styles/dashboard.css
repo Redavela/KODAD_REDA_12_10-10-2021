@@ -54,3 +54,13 @@
     justify-content: center;
     text-align: center;
 }
+.inside-circle{
+    background-color: white;
+    width: 174px;
+    height: 174px;
+    border-radius: 99%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

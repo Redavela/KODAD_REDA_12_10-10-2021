@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router';
 import {
   LineChart,
   Line,
@@ -18,8 +19,10 @@ const AverageSessions = () => {
 
     const [userInfoSessions, setUserInfoSession] = useState(undefined)
 
+    const {id}= useParams();
+
     useEffect(()=>{
-        getInfoSessions(12).then(data => {
+        getInfoSessions(id).then(data => {
             const userInfoSessionsFormat= data.sessions.map(session => ({
                 ...session,
                 day: axisDayData[session.day-1]

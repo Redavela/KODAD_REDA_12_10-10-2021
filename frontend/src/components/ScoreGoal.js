@@ -1,61 +1,64 @@
-import React from "react";
-import { RadialBarChart, RadialBar,} from "recharts";
-
-const data = [
- 
-  {
-    name: "12 % de votre projet",
-    uv: 2.67,
-    pv: 6800,
-    fill: "#FF0000"
-  }
-];
-
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: "24px"
-};
+import React from 'react';
+import {RadialBarChart, RadialBar} from 'recharts';
+import '../styles/dashboard.css'
+import PropTypes from 'prop-types';
 
 
 
-const ScoreGoal = () => {
+
+
+/**
+ *  composant qui affiche le score
+ * @param {number} score - description
+ */
+const ScoreGoal = ({score}) => {
+  const data = [
+    { 
+      score:1, 
+      fill: 'white'
+    },
+    {
+      score: score,
+      fill: '#ff0000'
+    },
+  ];
   return (
     <div
       style={{
-        backgroundColor: '#FBFBFB',
+        backgroundColor: '#fbfbfb',
         width: 235,
         height: 253,
         borderRadius: 5,
+        position:'relative'
       }}
     >
-      {/* <h2 style={{color: '#FFFFFF'}}>Durée moyenne des sessions</h2> */}
       <div
-         style={{
-          position: 'absolute',
-        }}
       >
-      <RadialBarChart
-        width={259}
-        height={259}
+        <RadialBarChart
+        width={235}
+        height={253}
         innerRadius={82}
-        outerRadius={120}
+        outerRadius={102}
         barSize={10}
         data={data}
-        startAngle={360} 
-        endAngle={0}
-        barGap={4}
+        startAngle={180} 
+        endAngle={-180}
     >
-        <RadialBar
-        clockWise
-        dataKey="uv"
-        
-      />
-      
-    </RadialBarChart> 
+          <RadialBar
+            minAngle={15}
+            background
+            clockWise={true}
+            dataKey="score"
+          />
+        </RadialBarChart>
+        <div className='inside-circle'>
+          <span>{score * 100}%</span> de votre objectif
+        </div>
       </div>
     </div>
   );
 };
+
+
 
 export default ScoreGoal;
