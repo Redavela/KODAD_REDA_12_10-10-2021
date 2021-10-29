@@ -32,7 +32,11 @@ const DailyActivity = () => {
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );
-
+   /**
+   * Show the toolTip on the hover
+   * @param {Object} values - contain all the info of the graph
+   * @return {HTMLElement} show the Tooltip
+   */  
   const renderTooltip = values => {
     if (values.active) {
       return (

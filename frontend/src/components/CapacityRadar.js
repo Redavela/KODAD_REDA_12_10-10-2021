@@ -18,7 +18,7 @@ const CapacityRadar = () => {
   }, []);
 
   if (!userPerformance) return <div>Loading</div>;
-  // console.log(userPerformance)
+  
   return (
     <div
       style={{

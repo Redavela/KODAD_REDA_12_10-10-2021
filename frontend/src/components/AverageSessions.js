@@ -29,12 +29,11 @@ const AverageSessions = () => {
       setUserInfoSession (userInfoSessionsFormat);
     });
   }, [id]);
-  // console.log(userInfoSessions);
 
   /**
-   * description
-   * @param {Object} values - description
-   * @return {HTMLElement} description
+   * Show the toolTip on the hover
+   * @param {Object} values - contain all the info of the graph
+   * @return {HTMLElement} show the ToolTip
    */
   const renderTooltip2 = values => {
     if (values.active) {
