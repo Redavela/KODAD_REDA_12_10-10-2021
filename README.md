@@ -27,10 +27,10 @@ cd KODAD_REDA_12_10-10-2021
 Install the packages
 npm i
 
-Run the project (port 3000 by default)
+Run the project (port 3001 by default)
 npm start
 
 
 The URL available (for the 2 users) are:
-http://localhost:3000/12
-http://localhost:3000/18
+http://localhost:3001/12
+http://localhost:3001/18
