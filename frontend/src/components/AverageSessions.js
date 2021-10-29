@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from 'react-router';
+import {useParams} from 'react-router';
 import {
   LineChart,
   Line,
@@ -11,67 +11,89 @@ import {
 import {getInfoSessions} from '../provider/UserProvider';
 
 
-
-const axisDayData = ['L','M','M','J','V','S','D'];
- 
-
+/**
+ * description
+ */
 const AverageSessions = () => {
+  const axisDayData = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  const [userInfoSessions, setUserInfoSession] = useState (undefined);
 
-    const [userInfoSessions, setUserInfoSession] = useState(undefined)
+  const {id} = useParams ();
+  console.log (id);
+  useEffect (() => {
+    getInfoSessions (id).then (data => {
+      const userInfoSessionsFormat = data.sessions.map (session => ({
+        ...session,
+        day: axisDayData[session.day - 1],
+      }));
+      setUserInfoSession (userInfoSessionsFormat);
+    });
+  }, [id]);
+  // console.log(userInfoSessions);
 
-    const {id}= useParams();
-
-    useEffect(()=>{
-        getInfoSessions(id).then(data => {
-            const userInfoSessionsFormat= data.sessions.map(session => ({
-                ...session,
-                day: axisDayData[session.day-1]
-            }))
-            setUserInfoSession(userInfoSessionsFormat)
-        })
-    },[])
-    // console.log(userInfoSessions);
-
-    const renderTooltip2 = values => {
-      if (values.active) {
-
-        return (
-          <div className='toolTips2'>
-            <p>{values.payload[0].value}min</p>
-          </div>
-        );
-      }
-      return null
-    };
+  /**
+   * description
+   * @param {Object} values - description
+   * @return {HTMLElement} description
+   */
+  const renderTooltip2 = values => {
+    if (values.active) {
+      return (
+        <div className="toolTips2">
+          <p>{values.payload[0].value}min</p>
+        </div>
+      );
+    }
+    return null;
+  };
   return (
     <div
       style={{
+        position: 'relative',
         backgroundColor: '#FF0000',
-        width: 240,
-        height: 253,
-        borderRadius: 5
+        width: 200,
+        height: 215,
+        borderRadius: 5,
       }}
     >
-      <h2 style={{color: '#FFFFFF', opacity:0.5}}>Durée moyenne des sessions</h2>
+      <h2
+        style={{
+          color: '#FFFFFF',
+          opacity: 0.7,
+          position: 'absolute',
+          left: 25,
+          top: 30,
+        }}
+      >
+        Durée moyenne des sessions
+      </h2>
       <ResponsiveContainer>
-        <LineChart width={730} height={180} data={userInfoSessions}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart
+          width={200}
+          height={215}
+          data={userInfoSessions}
+          margin={{top: 0, right: 8, left: 7, bottom: -10}}
+        >
           <XAxis
             dataKey="day"
             stroke="#FFFFFF"
+            opacity="0.7"
             tickSize="0"
             axisLine={false}
           />
-          <YAxis hide={true}/>
-          <Tooltip cursor={{ stroke: "#000", strokeWidth: 64, opacity: 0.1}} content={renderTooltip2} />
+          <YAxis hide={true} />
+          <Tooltip
+            cursor={{stroke: '#000', strokeWidth: 90, opacity: 0.1}}
+            content={renderTooltip2}
+          />
           <Line
             type="monotone"
             dataKey="sessionLength"
             stroke="#FFFFFF"
+            opacity="0.9"
             dot={false}
           />
         </LineChart>
-
 
       </ResponsiveContainer>
     </div>

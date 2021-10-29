@@ -19,11 +19,11 @@ const Dashboard = () => {
 
   const {id}= useParams();
 
-  console.log(id)
+  //console.log(id)
 
   useEffect (() => {
     getInfoUser (id).then (data => setUserInfo (data));
-  }, []);
+  }, [id]);
   console.log (userInfo);
 
   if (!userInfo) return <div>Loading</div>;

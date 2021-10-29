@@ -10,46 +10,49 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import {getInfoActivity} from '../provider/UserProvider';
+import {useParams} from 'react-router';
 
 const DailyActivity = () => {
-  const [userActivity, setUserActivity] = useState(undefined);
+  const [userActivity, setUserActivity] = useState (undefined);
+
+  const {id} = useParams ();
 
   useEffect (() => {
-    getInfoActivity (12).then (data => {
-      const formatUserActivity = data.sessions.map(session => {
+    getInfoActivity (id).then (data => {
+      const formatUserActivity = data.sessions.map (session => {
         return {
           ...session,
-          day: parseInt(session.day.slice (-2)),
+          day: parseInt (session.day.slice (-2)),
         };
       });
-      setUserActivity(formatUserActivity);
+      setUserActivity (formatUserActivity);
     });
   }, []);
   // console.log (userActivity);
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );
- 
+
   const renderTooltip = values => {
     if (values.active) {
       return (
-        <div className='toolTips'>
+        <div className="toolTips">
           <p>{values.payload[0].value}kg</p>
           <p>{values.payload[1].value}kCal</p>
         </div>
       );
     }
-    return null
+    return null;
   };
 
   if (userActivity) {
     return (
       <div className="container">
         <h2>Activité quotidienne</h2>
-        <ResponsiveContainer width={750} height={320}>
-  
+        <ResponsiveContainer width={650} height={280}>
+
           <BarChart
-            width={680}
+            width={600}
             height={250}
             data={userActivity}
             margin={{
@@ -57,11 +60,16 @@ const DailyActivity = () => {
               left: 40,
               bottom: 5,
             }}
-            barCategoryGap={29}
-            barGap={8}
+            barCategoryGap={22}
+            barGap={6}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="day" tickLine={false} tick={{fontSize: 14}} dy={15} />
+            <XAxis
+              dataKey="day"
+              tickLine={false}
+              tick={{fontSize: 14}}
+              dy={15}
+            />
             <YAxis
               orientation="right"
               tickCount={3}
@@ -93,9 +101,8 @@ const DailyActivity = () => {
       </div>
     );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
- 
 };
 
 export default DailyActivity;

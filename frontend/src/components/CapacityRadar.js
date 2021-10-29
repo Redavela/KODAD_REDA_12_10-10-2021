@@ -1,52 +1,51 @@
 import React, {useEffect, useState} from 'react';
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-} from 'recharts';
+import {Radar, RadarChart, PolarGrid, PolarAngleAxis} from 'recharts';
 import {getUserPerformance} from '../provider/UserProvider';
+import {useParams} from 'react-router';
 
 const CapacityRadar = () => {
   const [userPerformance, setUserPerformance] = useState (undefined);
+  const {id} = useParams ();
 
   useEffect (() => {
-    getUserPerformance (12).then (data => {
-      const subjectData = data.data.map(subject =>({
-          ...subject,
-          kind:data.kind[subject.kind]
-      }))
+    getUserPerformance (id).then (data => {
+      const subjectData = data.data.map (subject => ({
+        ...subject,
+        kind: data.kind[subject.kind],
+      }));
       setUserPerformance (subjectData);
-
     });
   }, []);
 
-
-
-  if (!userPerformance) return <div>Loading</div>
+  if (!userPerformance) return <div>Loading</div>;
   // console.log(userPerformance)
   return (
     <div
       style={{
         backgroundColor: '#282D30',
-        width: 235,
-        height: 253,
-        borderRadius: 5
+        width: 210,
+        height: 215,
+        borderRadius: 5,
       }}
     >
       <RadarChart
-        outerRadius={48}
-        width={235}
-        height={260}
+        outerRadius={65}
+        width={205}
+        height={215}
         data={userPerformance}
       >
         <PolarGrid radialLines={false} />
-        <PolarAngleAxis tickLine={false} dataKey="kind" stroke="#FFF" />
+        <PolarAngleAxis
+          tickLine={false}
+          tick={{fontSize: 9}}
+          dataKey="kind"
+          stroke="#FFF"
+        />
         <Radar
           dataKey="value"
           stroke="#FF0000"
           fill="#FF0000"
-          fillOpacity={0.6}
+          fillOpacity={0.8}
         />
       </RadarChart>
     </div>

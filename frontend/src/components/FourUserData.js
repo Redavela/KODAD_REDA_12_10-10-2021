@@ -3,6 +3,9 @@ import iconCalo from '../assets/calories-icon.png';
 import iconProt from '../assets/protein-icon.png';
 import iconGlu from '../assets/carbs-icon.png';
 import iconLip from '../assets/fat-icon.png';
+import PropTypes from 'prop-types';
+
+
 
 const FourUserData = props => {
   console.log (props);
@@ -51,4 +54,8 @@ const FourUserData = props => {
   );
 };
 
+
+FourUserData.propTypes = {
+  userData: PropTypes.object
+};
 export default FourUserData;

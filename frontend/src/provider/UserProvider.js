@@ -1,13 +1,17 @@
 const BASE_URL = 'http://localhost:3001/user';
 /**
  * Fetch user info
- * @param {number} id - id of user
+ * @param {Number} id - id of user
  * @return {Promise} - Promise with user info
  */
 export const getInfoUser = id => {
   return fetchInfo (id);
 };
-
+/**
+ * Fetch user activities 
+ * @param {Number} id - id of user
+ * @return {Promise} - Promise with user info
+ */
 export const getInfoActivity = id => {
   return fetchInfo (id, 'activity');
 };

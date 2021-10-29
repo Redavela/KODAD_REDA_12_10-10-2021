@@ -2,6 +2,10 @@ import React from 'react';
 import '../styles/dashboard.css';
 import PropTypes from 'prop-types';
 
+/**
+ * Welcome Message with the user name
+ * @param {string} name - username
+ */
 const Title = ({name}) => {
   return (
     <div className="title">

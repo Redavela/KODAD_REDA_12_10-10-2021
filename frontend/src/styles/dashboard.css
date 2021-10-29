@@ -1,7 +1,7 @@
 .user-activities{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 91%;
 }
 .layout-data{
     display: flex;
@@ -11,22 +11,24 @@
 .layout-row{
     display: flex;
     flex-direction: row;
+    width: initial;
+    height: 570px;
 }
 .flex-row{
-    width: 750px;
-    height: 320px;
+    width: 650px;
+    height: 300px;
     align-items: center;
     padding-left: 40px;
     margin-top: 30px;
 }
 .title{
     width: 70%;
-    padding: 50px 45px;
+    padding: 45px 45px;
 }
 .title h1{
-    font-size: 40px;
+    font-size: 34px;
     font-weight: bolder;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .title span{
     color: #ff0000;
@@ -35,10 +37,10 @@
     width:22%;
     height: 100%;
     border-radius: 5px;
-    padding-left: 70px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .four-data img{
     height: 60px;
@@ -47,12 +49,12 @@
 .liste{
     display: flex;
     flex-direction: row;
-    background-color: #fbfbfb;
-    height: 120px;
-    width: 220px;
+    background-color: #f8f8f8;
+    height: 110px;
+    width: 200px;
     border-radius: 5px;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .inside-circle{
     background-color: white;
@@ -63,4 +65,28 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.inside-circle p {
+    color: rgb(86, 86, 86);
+    margin: 60px auto;
+    width: 53px;
+    height: 50px;
+}
+.inside-circle span{
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+.info-icon{
+    width: 90px;
+    height: 60px;
+}
+.info-icon h2{
+    font-size: 19px;
+    font-weight: 800;
+    padding: 8px 0;
+}
+.info-icon p{
+    color: rgb(86, 86, 86);
+    font-size: 12px;
 }
