@@ -7,9 +7,7 @@ import Title from '../components/Title';
 import {getInfoUser} from '../provider/UserProvider';
 import FourUserData from '../components/FourUserData';
 import '../styles/dashboard.css';
-import { useParams } from 'react-router';
-
-
+import {useParams} from 'react-router';
 
 /**
  * The component display all the charts
@@ -17,13 +15,14 @@ import { useParams } from 'react-router';
 const Dashboard = () => {
   const [userInfo, setUserInfo] = useState (undefined);
 
-  const {id}= useParams();
+  const {id} = useParams ();
 
-  //console.log(id)
-
-  useEffect (() => {
-    getInfoUser (id).then (data => setUserInfo (data));
-  }, [id]);
+  useEffect (
+    () => {
+      getInfoUser (id).then (data => setUserInfo (data));
+    },
+    [id]
+  );
   console.log (userInfo);
 
   if (!userInfo) return <div>Loading</div>;

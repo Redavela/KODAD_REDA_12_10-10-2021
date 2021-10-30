@@ -12,6 +12,11 @@ import {
 import {getInfoActivity} from '../provider/UserProvider';
 import {useParams} from 'react-router';
 
+
+/**
+ * display BarChart
+ * @return {HTMLElement} - component contains BarChart
+ */
 const DailyActivity = () => {
   const [userActivity, setUserActivity] = useState (undefined);
 
@@ -28,7 +33,6 @@ const DailyActivity = () => {
       setUserActivity (formatUserActivity);
     });
   }, []);
-  // console.log (userActivity);
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );

@@ -6,7 +6,11 @@ import iconLip from '../assets/fat-icon.png';
 import PropTypes from 'prop-types';
 
 
-
+/**
+ * display calorie carbohydrate lipid and protein of the user
+ * @param {Object} props - calorie carbohydrate lipid and protein info
+ * @return {HTMLElement} - component contains user info
+ */
 const FourUserData = props => {
   console.log (props);
   const {

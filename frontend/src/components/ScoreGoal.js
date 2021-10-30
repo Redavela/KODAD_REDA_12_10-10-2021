@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 /**
  *  component display user score
- * @param {number} score - description
+ * @param {number} score - user score
  * @return {HTMLElement} - component contains RadialBarChart
  */
 const ScoreGoal = ({score}) => {

@@ -12,12 +12,13 @@ import {getInfoSessions} from '../provider/UserProvider';
 
 
 /**
- * description
+ * display LineChart
+ * @return {HTMLElement} - show the LineChart
  */
 const AverageSessions = () => {
-  const axisDayData = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
   const [userInfoSessions, setUserInfoSession] = useState (undefined);
-
+  const axisDayData = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  
   const {id} = useParams ();
   console.log (id);
   useEffect (() => {
@@ -29,11 +30,11 @@ const AverageSessions = () => {
       setUserInfoSession (userInfoSessionsFormat);
     });
   }, [id]);
-
+  
   /**
    * Show the toolTip on the hover
    * @param {Object} values - contain all the info of the graph
-   * @return {HTMLElement} show the ToolTip
+   * @return {HTMLElement} component contains the ToolTip
    */
   const renderTooltip2 = values => {
     if (values.active) {
