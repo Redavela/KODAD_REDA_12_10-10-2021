@@ -23,7 +23,7 @@ const Dashboard = () => {
     },
     [id]
   );
-  console.log (userInfo);
+  // console.log (userInfo);
 
   if (!userInfo) return <div>Loading</div>;
   return (

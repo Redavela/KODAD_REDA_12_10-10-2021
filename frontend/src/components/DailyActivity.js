@@ -31,7 +31,7 @@ const DailyActivity = () => {
       });
       setUserActivity (formatUserActivity);
     });
-  }, []);
+  }, [id]);
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );

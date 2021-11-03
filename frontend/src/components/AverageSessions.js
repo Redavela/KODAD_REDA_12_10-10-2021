@@ -30,6 +30,7 @@ const AverageSessions = () => {
         setUserInfoSession (userInfoSessionsFormat);
       });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [id]
   );
 
