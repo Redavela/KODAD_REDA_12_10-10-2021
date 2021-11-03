@@ -15,8 +15,7 @@ const Title = ({name}) => {
   );
 };
 
-
 Title.propTypes = {
-    name: PropTypes.string
-  };
+  name: PropTypes.string,
+};
 export default Title;

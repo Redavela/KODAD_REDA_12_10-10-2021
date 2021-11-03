@@ -10,7 +10,6 @@ import {
 } from 'recharts';
 import {getInfoSessions} from '../provider/UserProvider';
 
-
 /**
  * display LineChart
  * @return {HTMLElement} - show the LineChart
@@ -18,19 +17,22 @@ import {getInfoSessions} from '../provider/UserProvider';
 const AverageSessions = () => {
   const [userInfoSessions, setUserInfoSession] = useState (undefined);
   const axisDayData = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-  
+
   const {id} = useParams ();
   console.log (id);
-  useEffect (() => {
-    getInfoSessions (id).then (data => {
-      const userInfoSessionsFormat = data.sessions.map (session => ({
-        ...session,
-        day: axisDayData[session.day - 1],
-      }));
-      setUserInfoSession (userInfoSessionsFormat);
-    });
-  }, [id]);
-  
+  useEffect (
+    () => {
+      getInfoSessions (id).then (data => {
+        const userInfoSessionsFormat = data.sessions.map (session => ({
+          ...session,
+          day: axisDayData[session.day - 1],
+        }));
+        setUserInfoSession (userInfoSessionsFormat);
+      });
+    },
+    [id]
+  );
+
   /**
    * Show the toolTip on the hover
    * @param {Object} values - contain all the info of the graph

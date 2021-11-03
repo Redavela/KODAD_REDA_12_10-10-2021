@@ -34,8 +34,8 @@ const ScoreGoal = ({score}) => {
           position: 'absolute',
           left: 5,
           top: 10,
-          fontWeight:'bold',
-          fontSize:18,
+          fontWeight: 'bold',
+          fontSize: 18,
         }}
       >
         Score
@@ -67,6 +67,6 @@ const ScoreGoal = ({score}) => {
 };
 
 ScoreGoal.propTypes = {
-  score: PropTypes.number
+  score: PropTypes.number,
 };
 export default ScoreGoal;

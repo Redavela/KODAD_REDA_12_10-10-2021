@@ -5,7 +5,6 @@ import iconGlu from '../assets/carbs-icon.png';
 import iconLip from '../assets/fat-icon.png';
 import PropTypes from 'prop-types';
 
-
 /**
  * display calorie carbohydrate lipid and protein of the user
  * @param {Object} props - calorie carbohydrate lipid and protein info
@@ -58,8 +57,7 @@ const FourUserData = props => {
   );
 };
 
-
 FourUserData.propTypes = {
-  userData: PropTypes.object
+  userData: PropTypes.object,
 };
 export default FourUserData;

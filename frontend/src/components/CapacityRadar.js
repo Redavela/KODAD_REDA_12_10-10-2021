@@ -3,7 +3,6 @@ import {Radar, RadarChart, PolarGrid, PolarAngleAxis} from 'recharts';
 import {getUserPerformance} from '../provider/UserProvider';
 import {useParams} from 'react-router';
 
-
 /**
  * display RadarChart
  * @return {HTMLElement} - component contains RadarChart
@@ -12,15 +11,18 @@ const CapacityRadar = () => {
   const [userPerformance, setUserPerformance] = useState (undefined);
   const {id} = useParams ();
 
-  useEffect (() => {
-    getUserPerformance (id).then (data => {
-      const subjectData = data.data.map (subject => ({
-        ...subject,
-        kind: data.kind[subject.kind],
-      }));
-      setUserPerformance (subjectData);
-    });
-  }, [id]);
+  useEffect (
+    () => {
+      getUserPerformance (id).then (data => {
+        const subjectData = data.data.map (subject => ({
+          ...subject,
+          kind: data.kind[subject.kind],
+        }));
+        setUserPerformance (subjectData);
+      });
+    },
+    [id]
+  );
 
   if (!userPerformance) return <div>Loading...</div>;
   return (

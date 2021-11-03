@@ -13,7 +13,7 @@ const App = () => {
         <main>
           <VerticalHeader />
           <Route exact path="/">
-            <Redirect to="/18" />
+            <Redirect to="/12" />
           </Route>
           <Route exact path="/:id" component={Dashboard} />
         </main>

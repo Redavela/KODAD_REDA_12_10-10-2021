@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import logo from '../assets/logo (2).png'
+import logo from '../assets/logo (2).png';
 
 class Header extends Component {
   render () {
     return (
-      <nav className='nav'>
+      <nav className="nav">
         <ul>
           <li>
             <img src={logo} alt="SportSee" />

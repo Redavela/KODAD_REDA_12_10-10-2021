@@ -12,7 +12,6 @@ import {
 import {getInfoActivity} from '../provider/UserProvider';
 import {useParams} from 'react-router';
 
-
 /**
  * display BarChart
  * @return {HTMLElement} - component contains BarChart
@@ -36,11 +35,12 @@ const DailyActivity = () => {
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );
-   /**
+  /**
    * Show the toolTip on the hover
    * @param {Object} values - contain all the info of the graph
    * @return {HTMLElement} show the Tooltip
-   */  
+   */
+
   const renderTooltip = values => {
     if (values.active) {
       return (
