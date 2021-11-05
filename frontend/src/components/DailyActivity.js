@@ -21,17 +21,20 @@ const DailyActivity = () => {
 
   const {id} = useParams ();
 
-  useEffect (() => {
-    getInfoActivity (id).then (data => {
-      const formatUserActivity = data.sessions.map (session => {
-        return {
-          ...session,
-          day: parseInt (session.day.slice (-2)),
-        };
+  useEffect (
+    () => {
+      getInfoActivity (id).then (data => {
+        const formatUserActivity = data.sessions.map (session => {
+          return {
+            ...session,
+            day: parseInt (session.day.slice (-2)),
+          };
+        });
+        setUserActivity (formatUserActivity);
       });
-      setUserActivity (formatUserActivity);
-    });
-  }, [id]);
+    },
+    [id]
+  );
   const renderColorLegend = value => (
     <span style={{color: '#74798C'}}>{value}</span>
   );

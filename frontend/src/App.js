@@ -1,9 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
 import Header from './components/Header';
-import VerticalHeader from './components/VerticalHeader';
-import Dashboard from './pages/Dashboard';
-import './styles/App.css';
+import VerticalHeader from './components/VerticalHeader'
+import Dashboard from './pages/Dashboard'
+import './styles/App.css'
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
         </main>
       </Router>
     </div>
-  );
-};
+  )
+}
 
 export default App;
