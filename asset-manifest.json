@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/KODAD_REDA_12_10-10-2021/static/css/main.03225163.chunk.css",
+    "main.js": "/KODAD_REDA_12_10-10-2021/static/js/main.35d385a7.chunk.js",
+    "main.js.map": "/KODAD_REDA_12_10-10-2021/static/js/main.35d385a7.chunk.js.map",
+    "runtime-main.js": "/KODAD_REDA_12_10-10-2021/static/js/runtime-main.75e57240.js",
+    "runtime-main.js.map": "/KODAD_REDA_12_10-10-2021/static/js/runtime-main.75e57240.js.map",
+    "static/js/2.6eb01e9a.chunk.js": "/KODAD_REDA_12_10-10-2021/static/js/2.6eb01e9a.chunk.js",
+    "static/js/2.6eb01e9a.chunk.js.map": "/KODAD_REDA_12_10-10-2021/static/js/2.6eb01e9a.chunk.js.map",
+    "static/js/3.b80ea793.chunk.js": "/KODAD_REDA_12_10-10-2021/static/js/3.b80ea793.chunk.js",
+    "static/js/3.b80ea793.chunk.js.map": "/KODAD_REDA_12_10-10-2021/static/js/3.b80ea793.chunk.js.map",
+    "index.html": "/KODAD_REDA_12_10-10-2021/index.html",
+    "static/css/main.03225163.chunk.css.map": "/KODAD_REDA_12_10-10-2021/static/css/main.03225163.chunk.css.map",
+    "static/js/2.6eb01e9a.chunk.js.LICENSE.txt": "/KODAD_REDA_12_10-10-2021/static/js/2.6eb01e9a.chunk.js.LICENSE.txt",
+    "static/media/logo (2).e950560f.png": "/KODAD_REDA_12_10-10-2021/static/media/logo (2).e950560f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75e57240.js",
+    "static/js/2.6eb01e9a.chunk.js",
+    "static/css/main.03225163.chunk.css",
+    "static/js/main.35d385a7.chunk.js"
+  ]
+}
