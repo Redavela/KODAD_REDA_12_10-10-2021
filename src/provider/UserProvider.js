@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/user';
+const BASE_URL = process.env.API_URL ||'http://localhost:3001/user';
 /**
  * Fetch user info
  * @param {Number} id - id of user
